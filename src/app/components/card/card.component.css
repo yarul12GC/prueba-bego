@@ -1,0 +1,36 @@
+.headercard {
+    border-bottom: 1px solid #898989;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; 
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.grey-dot-bg {
+    background-color: #ccc; 
+}
+
+.blue-dot-bg {
+    background-color: #007bff; 
+}
+
+.yellow-dot-bg {
+    background-color: #ffeb3b;
+}
+.title-status{
+    font-size: 12px;
+}
+
+.truncate {
+    white-space: nowrap;     
+    overflow: hidden;         
+    text-overflow: ellipsis;  
+    max-width: 100%;           
+    display: inline-block;   
+    cursor: pointer;          
+  }
+  

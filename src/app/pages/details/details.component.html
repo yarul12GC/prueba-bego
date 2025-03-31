@@ -1,0 +1,74 @@
+<div class="cargo-container" *ngIf="detalle">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Referencia: {{ detalle.reference_number }}</h2>
+      <p>Orden #{{ detalle.order_number }}</p>
+    </div>
+  </div>
+
+  <div class="card pickup-dropoff-card">
+    <div class="pickup-section">
+      <h4>PICKUP</h4>
+      <p>{{ detalle.route.pickup }}</p>
+
+      <div class="checkbox-section">
+        <label>
+          <input type="checkbox" [checked]="detalle.status === 'Accepted' || detalle.completion_percentage > 0">
+          Accepted
+        </label>
+      </div>
+    </div>
+
+    <div class="dropoff-section">
+      <h4>DROPOFF</h4>
+      <p>{{ detalle.route.dropoff }}</p>
+
+      <div class="checkbox-section">
+        <label>
+          <input type="checkbox" [checked]="detalle.status === 'On hold'"> On hold
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="time-status">
+      <p>{{ formatTime(detalle.start_date) }}</p>
+
+      <div class="status-timeline">
+        <div class="status-item" [class.completed]="detalle.completion_percentage >= 0">
+          <input type="checkbox" [checked]="detalle.completion_percentage >= 0"> Created Order
+        </div>
+        <div class="status-item" [class.completed]="detalle.completion_percentage >= 25">
+          <input type="checkbox" [checked]="detalle.completion_percentage >= 25"> Accepted Order
+        </div>
+        <div class="status-item" [class.completed]="detalle.completion_percentage >= 50">
+          <input type="checkbox" [checked]="detalle.completion_percentage >= 50"> Pickup set up by {{
+          detalle.driver.nickname }}
+        </div>
+        <div class="status-item" [class.completed]="detalle.completion_percentage >= 75">
+          <input type="checkbox" [checked]="detalle.completion_percentage >= 75"> Pickup Completed
+        </div>
+        <div class="status-item" [class.completed]="detalle.completion_percentage >= 100">
+          <input type="checkbox" [checked]="detalle.completion_percentage >= 100"> Delivery Completed
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <button class="track-btn" (click)="trackOrder()">Track Order</button>
+
+  <div class="card mt-3">
+    <h4>Pickup Data</h4>
+    <p>{{ detalle.route.pickup }}</p>
+    <p>{{ formatDate(detalle.start_date) }} • {{ formatTime(detalle.start_date) }}</p>
+    <p>{{ detalle.driver.telephone }}</p>
+    <p>{{ detalle.driver.email }}</p>
+  </div>
+
+
+
+
+  <div *ngIf="!detalle" class="loading">Cargando detalles...</div>
+</div>

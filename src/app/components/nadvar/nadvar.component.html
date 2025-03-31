@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-4 text-center">
+      <a class="titlenadvar" 
+         [class.active]="activeFilter === 'upcoming'" 
+         [class.yellow-border]="activeFilter === 'upcoming'" 
+         (click)="setFilter('upcoming')">Upcoming</a>
+    </div>
+    <div class="col-4 text-center">
+      <a class="titlenadvar" 
+         [class.active]="activeFilter === 'completed'" 
+         [class.yellow-border]="activeFilter === 'completed'" 
+         (click)="setFilter('completed')">Completed</a>
+    </div>
+    <div class="col-4 text-center">
+      <a class="titlenadvar" 
+         [class.active]="activeFilter === 'past'" 
+         [class.yellow-border]="activeFilter === 'past'" 
+         (click)="setFilter('past')">Past</a>
+    </div>
+  </div>
+  

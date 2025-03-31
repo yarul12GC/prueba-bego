@@ -1,0 +1,30 @@
+.titlenadvar {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+@media (min-width: 200px) and (max-width: 425px) {
+    .titlenadvar {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+    }
+}
+.yellow-border {
+    border-bottom: 2px solid yellow;
+    color: yellow ;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .titlenadvar {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+  }
+  
+  .active {
+    font-weight: bold;
+  }
+  

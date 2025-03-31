@@ -1,0 +1,20 @@
+.zonaCard {
+    width: 95%;
+    height: auto;
+    background: rgb(17 20 24);
+    margin: 0 auto;
+    margin-top: 10px;
+    color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #8989899d;
+
+}
+.title-order{
+    color: #969798;
+}
+.descrption-title{
+    color: #fff;
+}
+.textoorder{
+    margin-left: 15px;
+}

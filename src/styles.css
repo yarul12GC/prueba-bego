@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+
+  body {   
+    
+    color: #fff;
+    transition: 0.3s ease all;
+    font-family: "Avenir", "Open Sans", sans-serif;
+  }
+  

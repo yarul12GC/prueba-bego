@@ -1,0 +1,13 @@
+.busc {
+    border: none;                   
+    border-bottom: 1px solid #fff;  
+    background: transparent;        
+    color: #fff;                   
+    padding: 10px;                 
+    outline: none;                  
+    transition: 0.3s;               
+}
+
+.busc:focus {
+    border-bottom: 2px solid #f0f0f0;  
+}

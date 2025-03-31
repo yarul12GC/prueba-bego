@@ -1,0 +1,20 @@
+<div class="mb-4">
+    <div class="col-md-12">
+        <div class="form-control position-relative bg-black mx-auto" style="border: none; width: 75%;">
+            <div class="form-group d-flex align-items-center">
+                <img src="/img/001.svg" alt="lupa"
+                    class="img-fluid position-absolute top-50 start-0 translate-middle-y ms-3" width="30" height="30">
+                <input type="search" placeholder="Buscar por número de orden"
+                    class="form-control ps-5 busc bg-black" 
+                    [(ngModel)]="searchTerm"
+                    (input)="onSearchChange()" />
+                @if (searchTerm) {
+                  <button class="btn btn-link position-absolute end-0 translate-middle-y me-2" 
+                          (click)="clearSearch()">
+                    <i class="fas fa-times"></i>
+                  </button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
