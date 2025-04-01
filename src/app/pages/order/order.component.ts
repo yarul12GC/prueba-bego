@@ -16,15 +16,18 @@ interface linkDetails {
 @Component({
   selector: 'app-order',
   standalone: true,
-  imports: [NadvarComponent, BuscadorComponent, CardComponent, HttpClientModule, CommonModule, BtndetailsComponent],  
+  imports: [NadvarComponent, BuscadorComponent, CardComponent, HttpClientModule, CommonModule, BtndetailsComponent, FormsModule],  
   providers: [UseServicePedidosService],
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']   
 })
 export default class OrderComponent implements OnInit {
+  
   pedidos: any[] = []; 
-  filteredPedidos: any[] = [];
-  currentFilter: string = 'upcoming';
+  pedidosFiltrados: any[] = [];
+  pedidosMostrados: any[] = [];
+  filtroActual: string = 'all';
+  terminoBusqueda: string = '';
 
   constructor(private pedidoService: UseServicePedidosService) {} 
 
@@ -36,14 +39,15 @@ export default class OrderComponent implements OnInit {
     pagesTypeStatus.forEach((status) => {
       this.pedidoService.getDatos(status).subscribe(
         (response) => {
-          const pedidosWithStatus = response.result.map((pedido: any) => ({
+          const pedidosConEstado = response.result.map((pedido: any) => ({
             ...pedido,
-            statusType: status
+            estado: status
           }));
           
-          allData.push(...pedidosWithStatus);
+          allData.push(...pedidosConEstado);
           this.pedidos = [...allData];
-          this.applyFilter(this.currentFilter);
+          this.filtrarPedidos(this.filtroActual);
+          this.aplicarBusqueda();
         },
         (error) => {
           console.error('Error al obtener los datos:', error);
@@ -52,15 +56,35 @@ export default class OrderComponent implements OnInit {
     });
   }
 
-  applyFilter(filter: string) {
-    this.currentFilter = filter;
-    if (filter === 'all') {
-      this.filteredPedidos = [...this.pedidos];
+  actualizarFiltro(nuevoFiltro: string): void {
+    this.filtroActual = nuevoFiltro;
+    this.filtrarPedidos(nuevoFiltro);
+    this.aplicarBusqueda();
+  }
+
+  filtrarPedidos(filtro: string): void {
+    if (filtro === 'all') {
+      this.pedidosFiltrados = [...this.pedidos];
     } else {
-      this.filteredPedidos = this.pedidos.filter(pedido => 
-        pedido.statusType === filter
-      );
+      this.pedidosFiltrados = this.pedidos.filter(pedido => pedido.estado === filtro);
     }
+  }
+
+  onSearchTermChanged(term: string): void {
+    this.terminoBusqueda = term;
+    this.aplicarBusqueda();
+  }
+
+  aplicarBusqueda(): void {
+    if (!this.terminoBusqueda) {
+      this.pedidosMostrados = [...this.pedidosFiltrados];
+      return;
+    }
+
+    const term = this.terminoBusqueda.toLowerCase();
+    this.pedidosMostrados = this.pedidosFiltrados.filter(pedido => 
+      pedido.order_number.toString().toLowerCase().includes(term)
+    );
   }
 
   ngOnInit(): void {

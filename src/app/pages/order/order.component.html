@@ -1,22 +1,26 @@
 <div class="row">
     <div class="col-md-12 mb-4">
-        <app-nadvar></app-nadvar>
+        <app-nadvar (filterChanged)="actualizarFiltro($event)"></app-nadvar>
     </div>
     <div class="col-md-12">
-        <app-buscador></app-buscador>
+        <app-buscador (searchChanged)="onSearchTermChanged($event)"></app-buscador>
     </div>
 
     <div class="col-md-12">
         <div class="container-md">
             <div class="row ">
-                <div *ngFor="let pedido of pedidos; let i = index" class="col-md-4">
+                <div *ngFor="let pedido of pedidosMostrados; let i = index" class="col-md-4">
                     <div class="mt-4">
-                        <p class="textoorder"><span class="title-order" >Order </span><span class="descrption-title">#{{pedido.order_number}}</span> </p>
+                        <p class="textoorder"><span class="title-order">Order </span><span class="descrption-title">#{{pedido.order_number}}</span> </p>
                     </div>
                     <div class="card zonaCard">
                         <app-card [result]="pedido"></app-card>
                         <app-btndetails [resultDet]="pedido"></app-btndetails>
                     </div>
+                </div>
+
+                <div *ngIf="pedidosMostrados.length === 0" class="col-md-12 text-center mt-5">
+                    <p class="text-muted">No se encontraron órdenes que coincidan con la búsqueda</p>
                 </div>
             </div>
         </div>

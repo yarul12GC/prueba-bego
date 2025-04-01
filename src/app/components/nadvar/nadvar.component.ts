@@ -3,7 +3,6 @@ import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-nadvar',
   standalone: true,
-  imports: [],
   templateUrl: './nadvar.component.html',
   styleUrl: './nadvar.component.css'
 })
