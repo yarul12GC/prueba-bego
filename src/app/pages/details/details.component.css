@@ -1,4 +1,3 @@
-/* Global Styles */
 .cargo-container {
     background: #000;
     color: #fff;
@@ -7,24 +6,13 @@
     min-height: 100vh;
   }
   
-  /* Header */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
   
-  .header h2 {
-    font-size: 22px;
-  }
   
   .back-icon, .bell-icon {
     cursor: pointer;
     font-size: 24px;
   }
   
-  /* Cards */
   .card {
     background: rgb(17 20 24);
     border-radius: 12px;
@@ -33,7 +21,6 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   }
   
-  /* Location Section */
   .location {
     display: flex;
     align-items: center;
