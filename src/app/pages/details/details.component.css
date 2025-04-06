@@ -1,154 +1,127 @@
-.cargo-container {
-    background: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    min-height: 100vh;
-  }
-  
-  
-  
-  .back-icon, .bell-icon {
-    cursor: pointer;
-    font-size: 24px;
-  }
-  
-  .card {
-    background: rgb(17 20 24);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  }
-  
-  .location {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .location-card {
-    display: flex;
-    align-items: center;
-    background: #1c1c1e;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    width: 48%;
-  }
-  
-  .icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    font-size: 24px;
-    margin-right: 15px;
-  }
-  
-  .yellow {
-    background: #FFD700;
-    color: #000;
-  }
-  
-  .blue {
-    background: #007BFF;
-    color: #fff;
-  }
-  
-  .line {
-    width: 4px;
-    height: 60px;
-    background: #555;
-    margin: 0 10px;
-  }
-  
-  .driver-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #1c1c1e;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .driver-card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-  
-  .driver-card p {
-    font-size: 18px;
-  }
-  
-  .progress {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-  }
-  
-  .progress-step {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    padding: 10px;
-    background: #1c1c1e;
-    border-radius: 8px;
-    color: #fff;
-  }
-  
-  .progress-step.completed {
-    color: #FFD700;
-  }
-  
-  .progress-step.inactive {
-    color: #555;
-  }
-  
-  .track-btn {
-    width: 100%;
-    padding: 15px;
-    background: #FFD700;
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: 0.3s;
-  }
-  
-  .track-btn:hover {
-    background: #e6c200;
-  }
-  
-  .pickup-data {
-    background: #1c1c1e;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    margin-top: 20px;
-  }
-  
-  .toggle {
-    cursor: pointer;
-    font-size: 18px;
-  }
-  
-  .details {
-    margin-top: 15px;
-  }
-  
-  .loading {
-    font-size: 18px;
-    text-align: center;
-    padding: 20px;
-  }
-  
+.card{
+  background: #111418;
+  color: #fff;
+  border-radius: 20px;
+  border: 1px solid #8989899d;}
+.btn-track{
+  width: 100%;
+  background-color: yellow;
+
+}
+
+
+
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  gap: 8px;
+}
+
+.custom-checkbox input {
+  display: none; 
+}
+
+.custom-checkbox .checkmark {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-color: yellow;
+}
+
+.imgavatar {
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 15px solid #111418; 
+  box-shadow: 0 4px 4px rgba(255, 255, 255, 0.804);
+  transition: transform 0.3s ease-in-out;
+}
+
+.imgavatar:hover {
+  transform: scale(1.05); 
+}
+
+
+.imgavatar:hover {
+  transform: scale(1.5);
+}
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+
+.timeline-step {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.circle-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+
+.circle.completed {
+  background-color: #ffe600;
+  border-color: #ffe600;
+  color: black;
+}
+
+.circle.pending {
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+.line {
+  width: 2px;
+  height: 80px;
+}
+
+.line-active {
+  background-color: #ffe600;
+}
+
+.line-inactive {
+  background-color: #e0e0e0;
+}
+
+.checkmark {
+  font-size: 16px;
+}
+
+.status-text {
+  font-weight: bold;
+  color: #888;
+  margin-top: 2px;
+}
+
+.status-text.active-text {
+  color: white;
+}
