@@ -7,40 +7,19 @@
       </div>
 
       <div class="card-body">
-        <div class="row mb-3">
-          <div class="col-3"></div>
-          <div class="col-9">
-            <p><strong>PICKUP</strong></p>
-            <p>{{ detalle.route.pickup }}</p>
-
-            <div class="checkbox-section">
-              <label>
-                <input type="checkbox" [checked]="detalle.status === 'Accepted' || detalle.completion_percentage > 0">
-                Accepted
-              </label>
-            </div>
+        <div *ngFor="let destination of detalle.destinations; let i = index" class="row mb-3">
+          <div class="col-3 mb-3">
+            <img [src]="i === 0 ? '/img/pickup.svg' : '/img/dropoff.svg'" [alt]="destination.nickname" width="50"
+              height="50" class="img-fluid my-auto">
           </div>
 
-        </div>
-        <div class="row mb-3">
-          <div class="col-3"></div>
-          <div class="col-9">
-            <p><strong>DROPOFF</strong></p>
-            <p>{{ detalle.route.dropoff }}</p>
-
-            <div class="checkbox-section">
-              <label>
-                <input type="checkbox" [checked]="detalle.status === 'On hold'"> On hold
-              </label>
-            </div>
+          <div class="col-9 mb-3">
+            <p class="truncate my-auto" [title]="destination.address">{{ destination.address }}</p>
           </div>
-
         </div>
-
       </div>
-
-
     </div>
+
 
     <div class="card mb-4 m-0">
 
@@ -90,24 +69,24 @@
 
 
 
-      <div class="card-body accordion mt-4" id="pickupAccordion">
-        <div class="card accordion-item">
-          <h2 class="accordion-header" id="headingPickup">
-            <button class="card accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePickup"
-              aria-expanded="true" aria-controls="collapsePickup">
-              Pickup Data
-            </button>
-          </h2>
-          <div id="collapsePickup" class="accordion-collapse collapse show" aria-labelledby="headingPickup"
-            data-bs-parent="#pickupAccordion">
-            <div class="accordion-body">
-              <p>{{ detalle.route.pickup }}</p>
-              <p>{{ formatDate(detalle.start_date) }} • {{ formatTime(detalle.start_date) }}</p>
-              <p>{{ detalle.driver.telephone }}</p>
-              <p>{{ detalle.driver.email }}</p>
-            </div>
+    <div class="card-body accordion mt-4" id="pickupAccordion">
+      <div class="card accordion-item">
+        <h2 class="accordion-header" id="headingPickup">
+          <button class="card accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePickup"
+            aria-expanded="true" aria-controls="collapsePickup">
+            Pickup Data
+          </button>
+        </h2>
+        <div id="collapsePickup" class="accordion-collapse collapse show" aria-labelledby="headingPickup"
+          data-bs-parent="#pickupAccordion">
+          <div class="accordion-body">
+            <p>{{ detalle.route.pickup }}</p>
+            <p>{{ formatDate(detalle.start_date) }} • {{ formatTime(detalle.start_date) }}</p>
+            <p>{{ detalle.driver.telephone }}</p>
+            <p>{{ detalle.driver.email }}</p>
           </div>
         </div>
+      </div>
     </div>
 
 

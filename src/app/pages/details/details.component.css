@@ -6,9 +6,19 @@
 .btn-track{
   width: 100%;
   background-color: yellow;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 
 }
 
+.truncate {
+  white-space: nowrap;     
+  overflow: hidden;         
+  text-overflow: ellipsis;  
+  max-width: 100%;           
+  display: inline-block;   
+  cursor: pointer;          
+}
 
 
 .custom-checkbox {
