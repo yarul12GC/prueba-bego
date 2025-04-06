@@ -44,15 +44,18 @@
 
     <div class="card mb-4 m-0">
 
-      <div class="card-header p-0 justify-content-center align-items-center d-flex ">
+      <div class="card-header p-0 justify-content-center align-items-center d-flex mb-4">
         <img
           [src]="detalle.driver?.thumbnail || 'https://s3-alpha-sig.figma.com/img/d66c/6bfc/5fae6fe6e789c41fe834890a2515d33a?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bv3sRYXTnKXPQrRbDsX9rgPlANroI0PeRIiSKjXtvWc5zAWdhXXn1QxDMuKJj5XnbLKg2JedschIBe1PhnHz9YJ1VyBfKTO2Epfx4MS6HJHybOdaJ3bz2-56au5L8X2cdh3BLRVmwDQ5PzOL0DGO1YpFL8isGCYjatPJ-Ip3zOfIHK7fGZT8pFea-KmcwLnYJJfDvRft1tE94GFkXlnmG~Fx3q~ZjSlaukgZ-9ewL3NZk9CtwyAhHj4qSY64t5EDX4iy5D4zM7cZ7H3PRf9OxmRcnMq0wCPn7MrEBUvTji59h3vJPjL87y6rczCrdVQQzDYE6~HPkw20cpH0E2rXtA__'"
           alt="Driver image" class="position-absolute imgavatar" width="150" height="150" />
       </div>
-      <p class="text-center mt-3">{{ formatTime(detalle.start_date) }}</p>
+      <div class="mt-5">
+        <p class="text-center mt-3">{{ formatTime(detalle.start_date) }}</p>
+
+      </div>
 
 
-      <div class="card-body mt-5  justify-content-center d-flex">
+      <div class="card-body mt-2  justify-content-center d-flex">
 
         <div class="row">
           <div class="timeline">
