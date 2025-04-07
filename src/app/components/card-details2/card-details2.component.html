@@ -1,1 +1,28 @@
-<p>card-details2 works!</p>
+
+
+<div class="card-body mt-2  justify-content-center d-flex">
+
+    <div class="row">
+        <div class="timeline">
+            <div class="timeline-step" *ngFor="let item of redulD2.status_list.pickup; let i = index">
+                <div class="circle-container">
+                    <div class="circle" [ngClass]="{ 'completed': item.active, 'pending': !item.active }">
+                        <span *ngIf="item.active" class="checkmark">
+                            <img src="/img/check.svg" alt="">
+                        </span>
+                    </div>
+
+                    <div class="line" *ngIf="i < redulD2.status_list.pickup.length - 1" [ngClass]="{
+                    'line-active': redulD2.status_list.pickup[i + 1]?.active,
+                    'line-inactive': !redulD2.status_list.pickup[i + 1]?.active
+                  }"></div>
+                </div>
+
+                <div class="status-text" [class.active-text]="item.active">
+                    {{ item.status }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

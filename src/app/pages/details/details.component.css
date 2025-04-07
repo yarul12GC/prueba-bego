@@ -8,7 +8,6 @@
   background-color: yellow;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-
 }
 
 .truncate {
@@ -18,31 +17,6 @@
   max-width: 100%;           
   display: inline-block;   
   cursor: pointer;          
-}
-
-
-.custom-checkbox {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-  gap: 8px;
-}
-
-.custom-checkbox input {
-  display: none; 
-}
-
-.custom-checkbox .checkmark {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background-color: #ccc;
-  transition: background-color 0.3s;
-}
-
-.custom-checkbox input:checked + .checkmark {
-  background-color: yellow;
 }
 
 .imgavatar {
@@ -59,79 +33,14 @@
   transform: scale(1.05); 
 }
 
-
 .imgavatar:hover {
   transform: scale(1.5);
 }
-.timeline {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  position: relative;
+.zona1{
+  width: 80%;
 }
-
-.timeline-step {
-  display: flex;
-  align-items: flex-start;
-  position: relative;
-}
-
-.circle-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 10px;
-}
-
-.circle {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  background-color: #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: bold;
-  color: white;
-}
-
-.circle.completed {
-  background-color: #ffe600;
-  border-color: #ffe600;
-  color: black;
-}
-
-.circle.pending {
-  background-color: #e0e0e0;
-  border-color: #e0e0e0;
-}
-
-.line {
-  width: 2px;
-  height: 80px;
-}
-
-.line-active {
-  background-color: #ffe600;
-}
-
-.line-inactive {
-  background-color: #e0e0e0;
-}
-
-.checkmark {
-  font-size: 16px;
-}
-
-.status-text {
-  font-weight: bold;
-  color: #888;
-  margin-top: 2px;
-}
-
-.status-text.active-text {
-  color: white;
+@media (min-width: 200px) and (max-width: 450px){
+  .zona1{
+    width: 95%;
+  }
 }

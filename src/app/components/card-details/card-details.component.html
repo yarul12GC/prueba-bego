@@ -1,9 +1,21 @@
+<div class="card" style="margin-bottom: 6rem;">
+  <div class="card-header">
+    <h5>Referencia: {{ resultD.reference_number }}</h5>
+    <h4>Orden #{{ resultD.order_number }}</h4>
+  </div>
 
-<div class="card-body">
-    <h5 class="card-title titlec text-center">
-      Pedido: {{ resultD._id }}
-    </h5>
-    <p class="card-text">Estado: {{ resultD.reference_number }}</p>
+  <div class="card-body">
+    <div *ngFor="let destination of resultD.destinations; let i = index" class="row mb-3">
+      <div class="col-3 mb-3">
+        <img [src]="i === 0 ? '/img/pickup.svg' : '/img/dropoff.svg'" [alt]="destination.nickname" width="50"
+          height="60" class="img-fluid my-auto">
+      </div>
+
+      <div class="col-9 mb-3">
+        <p class="truncate my-auto" [title]="destination.address">{{ destination.address }}</p>
+        <p> <span [ngClass]="destination.status_class" class="dot mx-2 my-auto"></span>
+          {{destination.status_string}} </p>
+      </div>
+    </div>
+  </div>
 </div>
-
-  

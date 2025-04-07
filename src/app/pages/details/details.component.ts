@@ -3,11 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { UseServicePedidosService } from '../../services/use-service-pedidos.service';
 import { CommonModule } from '@angular/common';
+import { CardDetailsComponent } from "../../components/card-details/card-details.component";
+import { CardDetails2Component } from "../../components/card-details2/card-details2.component";
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, CardDetailsComponent, CardDetails2Component],
   providers: [UseServicePedidosService],
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
